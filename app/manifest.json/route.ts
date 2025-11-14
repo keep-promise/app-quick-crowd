@@ -23,9 +23,9 @@ export async function GET() {
       type: 'none',
     },
     scopes: ['project'],
-    // modules: {
-    //   'project-menu': [{ key: 'menu', name: 'Getting Started', url: '/' }],
-    // },
+    modules: {
+      'project-menu': [{ key: 'menu', name: 'Getting Started', url: '/' }],
+    },
   };
 
   return NextResponse.json(manifestData);
