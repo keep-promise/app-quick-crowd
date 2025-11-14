@@ -24,7 +24,7 @@ export async function GET() {
     },
     scopes: ['project'],
     modules: {
-      'project-menu': [{ key: 'menu', name: 'Getting Started', url: '/project-menu' }],
+      'project-menu': [{ key: 'menu', name: 'Getting Started', url: '' }],
     },
   };
 
