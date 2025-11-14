@@ -14,6 +14,37 @@ import { NextResponse } from 'next/server';
  * `app/manifest.json` folder and returns a `NextResponse` with `.json()`.
  */
 export async function GET() {
+  // const modules = {
+  //     'project-menu': [{ key: 'menu', name: 'Getting Started', url: '/' }],
+  //   };
+  const modules = {
+    "ai-tools-widget": [
+      {
+        "key": "custom-data-visualization",
+        "toolType": "function",
+        "function": {
+          "name": "display_custom_graph",
+          "description": "Render a custom graph based on project-specific data.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "dataType": {
+                "type": "string",
+                "description": "The type of data to visualize (e.g., 'translation progress', 'quality assurance')."
+              },
+              "timeFrame": {
+                "type": "string",
+                "description": "The time frame for the data (e.g., 'last_week', 'last_month')."
+              }
+            },
+            "required": ["dataType", "timeFrame"]
+          }
+        },
+        "url": "/ai-tools-widget/display_custom_graph/index.html"
+      }
+    ]
+  };
+  
   const manifestData = {
     identifier: 'getting-started',
     name: 'Getting Started',
@@ -23,9 +54,7 @@ export async function GET() {
       type: 'none',
     },
     scopes: ['project'],
-    modules: {
-      'project-menu': [{ key: 'menu', name: 'Getting Started', url: '/' }],
-    },
+    modules: modules,
   };
 
   return NextResponse.json(manifestData);
