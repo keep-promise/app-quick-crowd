@@ -15,7 +15,7 @@ import { NextResponse } from 'next/server';
  */
 export async function GET() {
   const manifestData = {
-    identifier: 'Getting Started',
+    identifier: 'getting-started',
     name: 'Getting Started',
     baseUrl: process.env.NEXT_PUBLIC_BASE_URL,
     logo: '/logo.svg',
